@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Al-Jidh Sport</title>
+<meta name="description" content="Live scores, fixtures, tables and news from world football, with the Middle East at its heart.">
+<meta name="theme-color" content="#0A1A13">
+<meta name="color-scheme" content="light dark">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Al-Jidh">
+<link rel="preload" href="fonts/barlow-condensed-latin-800-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <canvas id="heroArt" aria-hidden="true"></canvas>
+    <button type="button" class="btn install" id="install" hidden>Install app</button>
+    <div class="hero-text">
+      <div class="title-row">
+        <h1>Al‑Jidh <span>Sport</span></h1>
+        <span class="ar" lang="ar" dir="rtl">الجذع <span>سبورت</span></span>
+      </div>
+      <div class="sub-row">
+        <p>Scores, fixtures and stories from world football, with the Middle East at its heart. Biggest and latest first · <span id="tzlabel">Times in your local time</span></p>
+        <div class="updated" id="updated">Loading…</div>
+      </div>
+    </div>
+  </header>
+
+  <div id="notice"></div>
+
+  <nav class="jump" aria-label="Sections">
+    <a href="#live">Live</a><a href="#fixtures">Fixtures</a><a href="#results">Results</a><a href="#competitions">Tournaments</a><a href="#clubs">Club &amp; country</a><a href="#players">Player news</a><a href="#tables">Tables</a>
+  </nav>
+
+  <div class="strip" id="strip" aria-label="Score strip"></div>
+
+  <section id="live" aria-label="Top match">
+    <div class="board" id="board"><div class="meta"><span class="comp">Al-Jidh Sport</span><span>Loading the scoreboard…</span></div></div>
+    <div class="next" id="next"></div>
+  </section>
+
+  <div class="grid">
+    <div class="stack">
+      <section id="fixtures">
+        <div class="sec-head"><h2>Fixtures</h2><span class="note" id="fx-note"></span></div>
+        <div id="filters"></div>
+        <div id="fx"><div class="skeleton"></div></div>
+      </section>
+      <section id="results">
+        <div class="sec-head"><h2>Latest results</h2><span class="note">Freshest and biggest first</span></div>
+        <div id="rs"><div class="skeleton"></div></div>
+      </section>
+      <section id="competitions">
+        <div class="sec-head"><h2>Tournaments</h2><span class="note">Ranked by what is happening now</span></div>
+        <div id="cp"></div>
+      </section>
+    </div>
+    <div class="stack">
+      <section id="clubs">
+        <div class="sec-head"><h2>Club &amp; country</h2></div>
+        <div id="cn"><div class="skeleton"></div></div>
+      </section>
+      <section id="players">
+        <div class="sec-head"><h2>Player news</h2></div>
+        <div id="pn"><div class="skeleton"></div></div>
+      </section>
+      <section id="tables">
+        <div class="sec-head"><h2>Tables</h2><span class="note">Shaded rows are in qualifying places</span></div>
+        <div class="tables" id="tb"></div>
+      </section>
+    </div>
+  </div>
+
+  <p class="foot-note" id="footnote">Scores and fixtures from API-Football. Headlines link to the original publisher. Team names and crests belong to their clubs and federations.</p>
+</div>
+
+<nav class="tabbar" aria-label="App sections">
+  <a href="#live" data-tab="live"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Live</a>
+  <a href="#fixtures" data-tab="fixtures"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Fixtures</a>
+  <a href="#results" data-tab="results"><svg viewBox="0 0 24 24"><path d="M5 19V9M12 19V5M19 19v-7"/></svg>Results</a>
+  <a href="#clubs" data-tab="clubs"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>News</a>
+  <a href="#tables" data-tab="tables"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16M9 6v12"/></svg>Tables</a>
+</nav>
+
+<script src="hero.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
